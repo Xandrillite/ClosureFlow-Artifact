@@ -1,21 +1,11 @@
-# ClosureFlow — Artifact
+# ClosureFlow research artifact
 
-This repository hosts the artifact package accompanying the paper:
+[Download the current artifact ZIP](https://github.com/Xandrillite/ClosureFlow-Artifact/releases/download/artifact-2026-09-25/ClosureFlow_Artifact.zip) (SHA-256 `8d73ab72f0d26ef6dc36001a8e092b86eb47e538ae18513a8032e42f040f5912`). Extract on Windows 10/11 with Python 3.10+; a fresh six-tool run also requires WSL2 Ubuntu 22.04.
 
-> **ClosureFlow: Reifying Closure Capture and Mutation for Taint Analysis of Cloud-Native Code**  
-> *ACM/IFIP International Middleware Conference (Middleware 2026)*
+```text
+python -m pip install -r requirements.txt
+python run_all.py --check
+python run_all.py --stage rq1
+```
 
----
-
-## Status: Coming Soon
-
-> **Notice for Reviewers:**  
-> The full artifact package—including the ClosureFlow analysis engine, cross-language micro-benchmarks, real-world serverless testbeds, and one-command reproduction scripts—is currently undergoing final packaging and will be uploaded here as soon as possible.
-> 
-> *完整实验工件、微基准测试数据集、分析工具与复现脚本正在进行最后整理与打包，将尽快完整同步并更新至本仓库。*
-
----
-
-## Contact
-
-For questions or early access to the experimental package during the evaluation period, please contact the authors.
+The default command re-scores packaged native analyzer responses. For a fresh run: `python run_all.py --stage rq1 --install-tools --re-run`. The ZIP also includes data and scripts for RQ2 (projects and CVEs), RQ3 (recorded ablation counts), and RQ4 (recorded timing). See the README inside for commands, result locations, tool prerequisites and provenance.
